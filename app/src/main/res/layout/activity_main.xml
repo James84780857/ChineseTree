@@ -32,16 +32,6 @@
         android:hint="輸入文字" />
 
     <Button
-        android:text="ocr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtInput"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp"
-        android:id="@+id/btnOrc"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:text="submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,4 +58,13 @@
         android:layout_below="@+id/btnServer"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp" />
+
+    <Button
+        android:text="ocr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/btnOrc"
+        android:layout_below="@+id/txtInput"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

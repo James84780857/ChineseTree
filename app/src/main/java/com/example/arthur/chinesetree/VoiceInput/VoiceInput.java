@@ -1,29 +1,35 @@
-package com.example.arthur.chinesetree;
+package com.example.arthur.chinesetree.VoiceInput;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.speech.RecognizerIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
-import com.example.arthur.chinesetree.VoiceInput.VoiceInput;
+import com.example.arthur.chinesetree.R;
 
 import java.util.ArrayList;
 
-import static com.example.arthur.chinesetree.R.menu.menu_main;
-
-public class MainActivity extends AppCompatActivity {
+import static android.app.Activity.RESULT_OK;
 
 
-    protected static final int RESULT_SPEECH = 1;
+/**
+ * Created by terry on 2017/1/26.
+ */
 
-    private Button btnSpeak;
-    private TextView txtText;
+public class VoiceInput extends AppCompatActivity {
+
+
+        protected static final int RESULT_SPEECH = 1;
+
+        private Button btnSpeak;
+        private TextView txtText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                            Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
 
                 try {
                     startActivityForResult(intent, RESULT_SPEECH);
@@ -81,7 +87,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-
 
 }
